@@ -2,13 +2,17 @@
 
 在 [mora](https://mora.jp/) 等在线音乐商店购买的 Hi-Res 音源往往过大，这主要是由于没有经过压缩导致的，使用 FLAC 进行**无损压缩**可以显著降低音乐体积。
 
-FLAC 提供了 1 ~8 八种压缩等级，其中 Level 8 对应”压缩最慢，体积最小“，因此选择 Level 8 作为压缩参数。（这里讨论的是无损压缩，用时间和算力换体积，对音质无任何影响）
+FLAC 提供了 1 ~ 8 八种压缩等级，其中 Level 8 对应”压缩最慢，体积最小“，因此选择 Level 8 作为压缩参数。（这里讨论的是无损压缩，用时间和算力换体积，对音质无任何影响）
 
-# 作用
+# Feature
 
-解决 flac 串行处理效率太低的问题，使用线程池并行计算。
+- 解决 flac 串行处理效率太低的问题，使用线程池并行计算
+- 递归访问
+- 计数回显
 
 **脚本非常简陋，无完善纠错机制和拓展性，但是正常使用能完成提高效率的目的。**
+
+
 
 # 原理
 
@@ -20,13 +24,15 @@ FLAC 提供了 1 ~8 八种压缩等级，其中 Level 8 对应”压缩最慢，
 flac -e -p -f -8 -s test.flac
 ```
 
+
+
 # 使用方法
 
 修改 `Main.java`  中相关变量：
 
 -  `flac` 路径 `FLAC_PATH`
-- 待处理路径 `INPUT_PATH`
-- 线程数 `THREAD_COUNT`
+-  待处理路径 `INPUT_PATH`
+-  线程数 `THREAD_COUNT` 推荐设置为 `2 * core - 1`
 
 运行：
 
@@ -34,6 +40,8 @@ flac -e -p -f -8 -s test.flac
 javac -encoding UTF-8 Main.java
 java Main
 ```
+
+
 
 # Demo
 
@@ -47,7 +55,7 @@ java Main
 
 **Size:** 118,533 KB (116.4 MB)
 
-**SOX:**
+**SoX:**
 
 ![](https://cdn.jsdelivr.net/gh/bipy/CDN@master/repo/FLAC-Compressor/before.png)
 
@@ -55,7 +63,7 @@ java Main
 
 **Size:** 81,983 KB (80.1 MB)
 
-**SOX:**
+**SoX:**
 
 ![](https://cdn.jsdelivr.net/gh/bipy/CDN@master/repo/FLAC-Compressor/after.png)
 
