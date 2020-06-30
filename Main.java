@@ -5,7 +5,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 public class Main {
     // Config
-    private static String INPUT_PATH = "D:\\Users\\Desktop\\[Hi-Res] Reol - 事実上(Special edition)[96kHz／24bit][FLAC]";
+    private static final String INPUT_PATH = "D:\\Users\\Desktop\\[Hi-Res] Reol - 事実上(Special edition)[96kHz／24bit][FLAC]";
     private static final String FLAC_PATH = "D:\\flac-1.3.2-win\\win64\\flac.exe";
     private static final int THREAD_COUNT = 4;
 
@@ -72,7 +72,7 @@ public class Main {
         try {
             service.awaitTermination(72, TimeUnit.HOURS);
         } catch (InterruptedException e) {
-            System.out.println("运行超时");
+            System.out.println("Time out");
             System.exit(2);
         }
     }
