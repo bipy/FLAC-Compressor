@@ -45,7 +45,7 @@ java Main
 
 # Demo
 
-![](https://cdn.jsdelivr.net/gh/bipy/CDN@master/repo/FLAC-Compressor/cover.jpg)
+![](assets/cover.jpg)
 
 **Object:** [RADWIMPS - 愛にできることはまだあるかい](https://mora.jp/package/43000006/00602508485718/) 
 
@@ -57,7 +57,7 @@ java Main
 
 **SoX:**
 
-![](https://cdn.jsdelivr.net/gh/bipy/CDN@master/repo/FLAC-Compressor/before.png)
+![](assets/before.png)
 
 ### After
 
@@ -65,5 +65,5 @@ java Main
 
 **SoX:**
 
-![](https://cdn.jsdelivr.net/gh/bipy/CDN@master/repo/FLAC-Compressor/after.png)
+![](assets/after.png)
 
